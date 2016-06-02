@@ -1,4 +1,4 @@
-# lua-pmrsn
+# MsgReciver 
 *Bot commands =>*
 ```
 /setdn <done msg>
@@ -79,5 +79,5 @@ by =>
 
 [Mrhalix](http://telegram.me/mrhalix)
 
-Powered By [ROYALTEAM](http://telegram.me/royalteamch)
+Powered By [Allwen(Thanks To MrHalix)](http://telegram.me/allwen)
 {Special Tnx To [AmirSbss](http://telegram.me/Amir_h) For Block List}
