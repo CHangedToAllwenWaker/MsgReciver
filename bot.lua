@@ -7,7 +7,7 @@ HTTPS = require('ssl.https')
 redis_server = require('redis') --https://github.com/nrk/redis-lua
 redis = redis_server.connect('127.0.0.1', 6379)
 ----config----
-local bot_api_key = "" --Your telegram bot api key
+local bot_api_key = "180026910:AAEFV245TbTpLQl_xxD1vcw56mV9N5_HQ0c"
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[/setdn `<done msg>`
@@ -36,7 +36,7 @@ _reload bot!_
 
 function is_admin(msg)-- Check if user is admin or not
   local var = false
-  local admins = {122774063,0}-- put your id here
+  local admins = {174770816}-- Put your id here
   for k,v in pairs(admins) do
     if msg.from.id == v then
       var = true
@@ -269,12 +269,12 @@ if msg then
 		local user = msg.reply_to_message.forward_from.id
 		redis:sadd('pmrsn:blocks',user)
 		local torealm = sendMessage(msg.chat.id,'User has been added to block list!')
-		local touser = sendMessage(user, 'You are *blocked* from bot \n _Sorry_', true, false, true)
+		local touser = sendMessage(user, 'You are *blocked* from @Allwenpvbot bot \n _Im Sorry_', true, false, true)
 			elseif msg.text:match("^/unblock") and msg.chat.type ~= 'private' then
 		local user = msg.reply_to_message.forward_from.id
 		redis:srem('pmrsn:blocks',user)
 		local torealm = sendMessage(msg.chat.id,'User has been removed from block list!')
-		local touser = sendMessage(user, 'You has been *unblocked* :)))', true, false, true)
+		local touser = sendMessage(user, 'You has been *unblocked* From @Allwenpvbot :)))', true, false, true)
 		else
 		local user = msg.reply_to_message.forward_from.id
 		sendMessage(user,msg.text)
@@ -293,7 +293,7 @@ if msg then
 		sendMessage(msg.chat.id,list,true,nil,true)
 	elseif msg.text:match("^/blocklist") and is_realm(msg) then
 		local list = redis:hkeys('pmrsn:blocks')
-		    local text = 'Blocked Users list :\n______________________________\n'
+		    local text = 'Blocked Users list :\n______________________________\n\n@AllwenPvBot'
                     for i=1, #list do
                     text = text..'> '..list[i]..'\n'
                 end
